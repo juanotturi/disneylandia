@@ -10,16 +10,20 @@ buildNumber.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 
+#Intelij IDEA
 .idea
 *.iws
 *.iml
 *.ipr
 
+#VS Code
 .vscode/
 
 HELP.md
 !**/src/main/**/target/
 !**/src/test/**/target/
+
+#SPT
 .apt_generated
 .classpath
 .factorypath
