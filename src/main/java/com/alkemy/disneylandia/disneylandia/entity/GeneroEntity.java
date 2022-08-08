@@ -1,2 +1,22 @@
-package com.alkemy.disneylandia.disneylandia.entity;public class GeneroEntity {
+package com.alkemy.disneylandia.disneylandia.entity;
+
+import lombok.Setter;
+import lombok.Getter;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "genero")
+@Getter
+@Setter
+
+public class GeneroEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+
+    private Long id;
+    private String imagen;
+    private String nombre;
+
 }
