@@ -1,14 +1,12 @@
 package com.alkemy.disneylandia.disneylandia.service;
 
 import com.alkemy.disneylandia.disneylandia.dto.GeneroDto;
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-@Service
-public class GeneroService {
+public interface GeneroService {
 
-    public GeneroDto save(GeneroDto dto){
-        // TODO: guardar
-        System.out.println("GUARDAR GENERO");
-        return dto;
-    }
+    GeneroDto save(GeneroDto dto);
+
+    List<GeneroDto> getAllGeneros();
+
 }
