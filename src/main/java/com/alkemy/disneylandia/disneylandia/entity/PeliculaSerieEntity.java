@@ -17,7 +17,7 @@ import java.util.Set;
 public class PeliculaSerieEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
     private String imagen;
