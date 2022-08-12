@@ -2,7 +2,6 @@ package com.alkemy.disneylandia.disneylandia.entity;
 
 import lombok.Setter;
 import lombok.Getter;
-
 import javax.persistence.*;
 
 @Entity

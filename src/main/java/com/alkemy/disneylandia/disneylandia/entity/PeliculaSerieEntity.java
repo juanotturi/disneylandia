@@ -3,7 +3,6 @@ package com.alkemy.disneylandia.disneylandia.entity;
 import lombok.Setter;
 import lombok.Getter;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -13,7 +12,6 @@ import java.util.Set;
 @Table(name = "peliculaserie")
 @Getter
 @Setter
-
 public class PeliculaSerieEntity {
 
     @Id
