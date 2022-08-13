@@ -20,13 +20,13 @@ public class PeliculaSerieServiceImplement implements PeliculaSerieService {
     public PeliculaSerieDto save(PeliculaSerieDto dto){
         PeliculaSerieEntity entity = peliculaSerieMapper.peliculaSerieDto2Entity(dto);
         PeliculaSerieEntity entitySaved = peliculaSerieRepository.save(entity);
-        PeliculaSerieDto result = peliculaSerieMapper.peliculaSerieEntity2Dto(entitySaved);
+        PeliculaSerieDto result = peliculaSerieMapper.peliculaSerieEntity2Dto(entitySaved, false);
         return dto;
     }
 
     public List<PeliculaSerieDto> getAllPeliculasSeries() {
         List<PeliculaSerieEntity> entities = peliculaSerieRepository.findAll();
-        List<PeliculaSerieDto> result = peliculaSerieMapper.peliculaSerieEntityList2DtoList(entities);
+        List<PeliculaSerieDto> result = peliculaSerieMapper.peliculaSerieEntityList2DtoList(entities, false);
         return result;
     }
 }

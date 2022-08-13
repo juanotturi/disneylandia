@@ -1,17 +1,16 @@
 package com.alkemy.disneylandia.disneylandia.mapper;
 
-import com.alkemy.disneylandia.disneylandia.dto.GeneroDto;
 import com.alkemy.disneylandia.disneylandia.dto.PeliculaSerieDto;
-import com.alkemy.disneylandia.disneylandia.entity.GeneroEntity;
+import com.alkemy.disneylandia.disneylandia.dto.PersonajeDto;
 import com.alkemy.disneylandia.disneylandia.entity.PeliculaSerieEntity;
-import com.alkemy.disneylandia.disneylandia.service.PeliculaSerieService;
 import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class PeliculaSerieMapper {
+
+    private PersonajeMapper personajeMapper;
 
     public PeliculaSerieEntity peliculaSerieDto2Entity(PeliculaSerieDto dto){
         PeliculaSerieEntity peliculaSerieEntity = new PeliculaSerieEntity();
@@ -21,20 +20,32 @@ public class PeliculaSerieMapper {
         return peliculaSerieEntity;
     }
 
-    public PeliculaSerieDto peliculaSerieEntity2Dto(PeliculaSerieEntity entity){
+    public PeliculaSerieDto peliculaSerieEntity2Dto(PeliculaSerieEntity entity, boolean loadPersonajes){
         PeliculaSerieDto dto = new PeliculaSerieDto();
         dto.setId(entity.getId());
         dto.setTitulo(entity.getTitulo());
         dto.setImagen(entity.getImagen());
         dto.setCalificacion(Math.toIntExact(entity.getCalificacion()));
+        if(loadPersonajes){
+            List<PersonajeDto> personajesDtos = personajeMapper.personajeEntitySet2DtoList(entity.getPersonajes(), false);
+            dto.setPersonajes(personajesDtos);
+        }
         return dto;
     }
 
-    public List<PeliculaSerieDto> peliculaSerieEntityList2DtoList(List<PeliculaSerieEntity> entities){
+    public List<PeliculaSerieDto> peliculaSerieEntityList2DtoList(List<PeliculaSerieEntity> entities, boolean loadPersonajes){
         List<PeliculaSerieDto> dtos = new ArrayList<>();
         for (PeliculaSerieEntity entity : entities){
-            dtos.add(peliculaSerieEntity2Dto(entity));
+            dtos.add(peliculaSerieEntity2Dto(entity, loadPersonajes));
         }
         return dtos;
+    }
+
+    public List<PeliculaSerieEntity> peliculaSerieDtoList2Entity(List<PeliculaSerieDto> dtos){
+        List<PeliculaSerieEntity> entities = new ArrayList<>();
+        for(PeliculaSerieDto dto : dtos){
+            entities.add(peliculaSerieDto2Entity(dto));
+        }
+        return entities;
     }
 }

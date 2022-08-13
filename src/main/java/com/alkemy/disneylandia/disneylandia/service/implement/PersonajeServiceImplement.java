@@ -21,13 +21,17 @@ public class PersonajeServiceImplement implements PersonajeService {
     public PersonajeDto save(PersonajeDto dto){
         PersonajeEntity entity = personajeMapper.personajeDto2Entity(dto);
         PersonajeEntity entitySaved = personajeRepository.save(entity);
-        PersonajeDto result = personajeMapper.personajeEntity2Dto(entitySaved);
+        PersonajeDto result = personajeMapper.personajeEntity2Dto(entitySaved, false);
         return result;
     }
 
     public List<PersonajeDto> getAllPersonajes() {
         List<PersonajeEntity> entities = personajeRepository.findAll();
-        List<PersonajeDto> result = personajeMapper.personajeEntityList2DtoList(entities);
+        List<PersonajeDto> result = personajeMapper.personajeEntitySet2DtoList(entities, false);
         return result;
+    }
+
+    public void delete(Long id) {
+        personajeRepository.deleteById(id);
     }
 }

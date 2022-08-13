@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @RequestMapping("personajes")
@@ -26,4 +27,10 @@ public class PersonajeController {
         PersonajeDto personajeSaved = personajeService.save(personaje);
         return ResponseEntity.status(HttpStatus.CREATED).body(personajeSaved);
     }
+
+    @DeleteMapping("/{id}")
+        public ResponseEntity<Void> delete(@PathVariable Long id){
+            personajeService.delete(id);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        }
 }

@@ -9,4 +9,6 @@ public interface PersonajeService {
     PersonajeDto save(PersonajeDto dto);
 
     List<PersonajeDto> getAllPersonajes();
+
+    void delete(Long id);
 }
