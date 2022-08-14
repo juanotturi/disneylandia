@@ -1,10 +1,12 @@
 package com.alkemy.disneylandia.disneylandia.mapper;
 
+import com.alkemy.disneylandia.disneylandia.dto.PeliculaSerieBasicDto;
 import com.alkemy.disneylandia.disneylandia.dto.PeliculaSerieDto;
 import com.alkemy.disneylandia.disneylandia.dto.PersonajeDto;
 import com.alkemy.disneylandia.disneylandia.entity.PeliculaSerieEntity;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Component
@@ -47,5 +49,18 @@ public class PeliculaSerieMapper {
             entities.add(peliculaSerieDto2Entity(dto));
         }
         return entities;
+    }
+
+    public List<PeliculaSerieBasicDto> peliculaSerieEntitySet2BasicDtoList(Collection<PeliculaSerieEntity> entities){
+        List<PeliculaSerieBasicDto> dtos = new ArrayList<>();
+        PeliculaSerieBasicDto basicDto;
+        for (PeliculaSerieEntity entity : entities){
+            basicDto = new PeliculaSerieBasicDto();
+            basicDto.setId(entity.getId());
+            basicDto.setTitulo(entity.getTitulo());
+            basicDto.setImagen(entity.getImagen());
+            basicDto.setFechaCreacion(entity.getFechaCreacion());
+        }
+        return dtos;
     }
 }
