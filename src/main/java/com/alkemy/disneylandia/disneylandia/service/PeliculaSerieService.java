@@ -7,4 +7,6 @@ import java.util.List;
 public interface PeliculaSerieService {
     PeliculaSerieDto save(PeliculaSerieDto dto);
     List<PeliculaSerieDto> getAllPeliculasSeries();
+
+    List<PeliculaSerieDto> getByFilters(String titulo, Long genero_id, String orden);
 }
