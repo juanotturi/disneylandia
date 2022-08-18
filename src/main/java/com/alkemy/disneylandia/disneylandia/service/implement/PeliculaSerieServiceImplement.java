@@ -3,6 +3,7 @@ package com.alkemy.disneylandia.disneylandia.service.implement;
 import com.alkemy.disneylandia.disneylandia.dto.PeliculaSerieDto;
 import com.alkemy.disneylandia.disneylandia.dto.PeliculaSerieFiltersDto;
 import com.alkemy.disneylandia.disneylandia.entity.PeliculaSerieEntity;
+import com.alkemy.disneylandia.disneylandia.exception.ParamNotFound;
 import com.alkemy.disneylandia.disneylandia.mapper.PeliculaSerieMapper;
 import com.alkemy.disneylandia.disneylandia.repository.PeliculaSerieRepository;
 import com.alkemy.disneylandia.disneylandia.repository.specification.PeliculaSerieSpecification;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PeliculaSerieServiceImplement implements PeliculaSerieService {
@@ -40,10 +42,19 @@ public class PeliculaSerieServiceImplement implements PeliculaSerieService {
     }
 
     @Override
-    public List<PeliculaSerieDto> getByFilters(String titulo, Long genero_id, String orden) {
-        PeliculaSerieFiltersDto filtersDto = new PeliculaSerieFiltersDto(titulo, genero_id, orden);
+    public List<PeliculaSerieDto> getByFilters(String titulo, Long generoId, String orden) {
+        PeliculaSerieFiltersDto filtersDto = new PeliculaSerieFiltersDto(titulo, generoId, orden);
         List<PeliculaSerieEntity> entities = peliculaSerieRepository.findAll(peliculaSerieSpecification.getByFilters(filtersDto));
         List<PeliculaSerieDto> dtos = peliculaSerieMapper.peliculaSerieEntityList2DtoList(entities, true);
         return dtos;
+    }
+
+    public PeliculaSerieDto getDetailsById(Long id) {
+        Optional<PeliculaSerieEntity> entity = peliculaSerieRepository.findById(id);
+        if (!entity.isPresent()) {
+            throw new ParamNotFound("ID película/serie no válido");
+        }
+        PeliculaSerieDto peliculaSerieDto = peliculaSerieMapper.peliculaSerieEntity2Dto(entity.get(), true);
+        return peliculaSerieDto;
     }
 }

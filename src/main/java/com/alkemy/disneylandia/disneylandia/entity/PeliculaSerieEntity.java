@@ -3,6 +3,7 @@ package com.alkemy.disneylandia.disneylandia.entity;
 import lombok.Setter;
 import lombok.Getter;
 import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -53,5 +54,10 @@ public class PeliculaSerieEntity {
             return false;
         final PeliculaSerieEntity other = (PeliculaSerieEntity) obj;
         return other.id == this.id;
+    }
+
+    @PrePersist
+    void persist() {
+        setFechaCreacion(LocalDate.now());
     }
 }

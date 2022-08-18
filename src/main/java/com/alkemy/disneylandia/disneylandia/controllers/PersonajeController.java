@@ -18,7 +18,7 @@ public class PersonajeController {
     @Autowired
     private PersonajeService personajeService;
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<PersonajeDto>> getAll() {
         List<PersonajeDto> personajes = personajeService.getAllPersonajes();
         return ResponseEntity.ok().body(personajes);
@@ -31,7 +31,12 @@ public class PersonajeController {
     }
 
     @GetMapping
-    public ResponseEntity<List<PersonajeDto>> getDetailsByFilters(@RequestParam(required = false) String nombre, @RequestParam(required = false) Long edad, @RequestParam(required = false) Long peso, @RequestParam(required = false) Set<Long> peliculasSeries, @RequestParam(required = false, defaultValue = "ASC") String orden) {
+    public ResponseEntity<List<PersonajeDto>> getDetailsByFilters(
+            @RequestParam(required = false) String nombre,
+            @RequestParam(required = false) Long edad,
+            @RequestParam(required = false) Long peso,
+            @RequestParam(required = false) Set<Long> peliculasSeries,
+            @RequestParam(required = false, defaultValue = "ASC") String orden) {
         List<PersonajeDto> personajes = personajeService.getByFilters(nombre, edad, peso, peliculasSeries, orden);
         return ResponseEntity.ok(personajes);
     }

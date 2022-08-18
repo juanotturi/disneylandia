@@ -16,15 +16,24 @@ public class PeliculaSerieController {
     @Autowired
     private PeliculaSerieService peliculaSerieService;
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<PeliculaSerieDto>> getAll() {
         List<PeliculaSerieDto> peliculasSeries = peliculaSerieService.getAllPeliculasSeries();
         return ResponseEntity.ok().body(peliculasSeries);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<PeliculaSerieDto> getDetailsById(@PathVariable Long id) {
+        PeliculaSerieDto peliculaSerie = peliculaSerieService.getDetailsById(id);
+        return ResponseEntity.ok(peliculaSerie);
+    }
+
     @GetMapping
-    public ResponseEntity<List<PeliculaSerieDto>> getDetailsByFilters(@RequestParam(required = false) String titulo, @RequestParam(required = false) Long genero_id, @RequestParam(required = false, defaultValue = "ASC") String orden) {
-        List<PeliculaSerieDto> peliculasSeries = peliculaSerieService.getByFilters(titulo, genero_id, orden);
+    public ResponseEntity<List<PeliculaSerieDto>> getDetailsByFilters(
+            @RequestParam(required = false) String titulo,
+            @RequestParam(required = false) Long generoId,
+            @RequestParam(required = false, defaultValue = "ASC") String orden) {
+        List<PeliculaSerieDto> peliculasSeries = peliculaSerieService.getByFilters(titulo, generoId, orden);
         return ResponseEntity.ok(peliculasSeries);
     }
 

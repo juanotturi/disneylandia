@@ -11,7 +11,7 @@ import java.util.*;
 @Component
 public class PersonajeMapper {
 
-    private PeliculaSerieMapper peliculaSerieMapper;
+    private PeliculaSerieMapper peliculaSerieMapper = new PeliculaSerieMapper();
 
     public PersonajeEntity personajeDto2Entity(PersonajeDto dto) {
         PersonajeEntity personajeEntity = new PersonajeEntity();

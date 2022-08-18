@@ -22,11 +22,11 @@ public class PeliculaSerieSpecification {
                         )
                 );
             }
-            if (StringUtils.hasLength(String.valueOf(filtersDto.getGeneroId()))) {
-                predicates.add(criteriaBuilder.equal(root.get("generoId"), Long.toString(filtersDto.getGeneroId())));
+            if (filtersDto.getGeneroId() != null) {
+                predicates.add(criteriaBuilder.equal(root.get("generoId"), filtersDto.getGeneroId()));
             }
             query.distinct(true);
-            String orderByField = "fecha_creacion";
+            String orderByField = "fechaCreacion";
             query.orderBy(
                     filtersDto.isAsc() ?
                             criteriaBuilder.asc(root.get((orderByField))) : criteriaBuilder.desc(root.get(orderByField))
