@@ -32,7 +32,7 @@ public class PeliculaSerieServiceImplement implements PeliculaSerieService {
         PeliculaSerieEntity entity = peliculaSerieMapper.peliculaSerieDto2Entity(dto);
         PeliculaSerieEntity entitySaved = peliculaSerieRepository.save(entity);
         PeliculaSerieDto result = peliculaSerieMapper.peliculaSerieEntity2Dto(entitySaved, false);
-        return dto;
+        return result;
     }
 
     public List<PeliculaSerieDto> getAllPeliculasSeries() {
@@ -57,4 +57,9 @@ public class PeliculaSerieServiceImplement implements PeliculaSerieService {
         PeliculaSerieDto peliculaSerieDto = peliculaSerieMapper.peliculaSerieEntity2Dto(entity.get(), true);
         return peliculaSerieDto;
     }
+
+//    @Override
+//    public void addPersonaje(Long id, Long idPersonaje) {
+//
+//    }
 }

@@ -42,4 +42,10 @@ public class PeliculaSerieController {
         PeliculaSerieDto peliculaSerieSaved = peliculaSerieService.save(peliculaSerie);
         return ResponseEntity.status(HttpStatus.CREATED).body(peliculaSerieSaved);
     }
+
+//    @PostMapping("/{id}/personajes/{id}")
+//    public ResponseEntity<Void> addPersonaje2PeliculaSerie(@PathVariable Long id, Long idPersonaje) {
+//        peliculaSerieService.addPersonaje(id, idPersonaje);
+//        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+//    }
 }

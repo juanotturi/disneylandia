@@ -12,4 +12,6 @@ public interface PeliculaSerieService {
     List<PeliculaSerieDto> getByFilters(String titulo, Long generoId, String orden);
 
     PeliculaSerieDto getDetailsById(Long id);
+
+//    void addPersonaje(Long id, Long idPersonaje);
 }

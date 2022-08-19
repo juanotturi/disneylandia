@@ -1,6 +1,5 @@
 package com.alkemy.disneylandia.disneylandia.controllers;
 
-import com.alkemy.disneylandia.disneylandia.dto.PeliculaSerieDto;
 import com.alkemy.disneylandia.disneylandia.dto.PersonajeDto;
 import com.alkemy.disneylandia.disneylandia.service.PersonajeService;
 import org.springframework.beans.factory.annotation.Autowired;
