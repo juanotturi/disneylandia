@@ -16,4 +16,6 @@ public interface PersonajeService {
     PersonajeDto getDetailsById(Long id);
 
     List<PersonajeDto> getByFilters(String nombre, Long edad, Long peso, Set<Long> peliculasSeries, String orden);
+
+    PersonajeDto update(Long id, PersonajeDto personajeDto);
 }

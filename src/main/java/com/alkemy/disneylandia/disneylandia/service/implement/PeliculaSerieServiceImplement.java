@@ -3,9 +3,11 @@ package com.alkemy.disneylandia.disneylandia.service.implement;
 import com.alkemy.disneylandia.disneylandia.dto.PeliculaSerieDto;
 import com.alkemy.disneylandia.disneylandia.dto.PeliculaSerieFiltersDto;
 import com.alkemy.disneylandia.disneylandia.entity.PeliculaSerieEntity;
+import com.alkemy.disneylandia.disneylandia.entity.PersonajeEntity;
 import com.alkemy.disneylandia.disneylandia.exception.ParamNotFound;
 import com.alkemy.disneylandia.disneylandia.mapper.PeliculaSerieMapper;
 import com.alkemy.disneylandia.disneylandia.repository.PeliculaSerieRepository;
+import com.alkemy.disneylandia.disneylandia.repository.PersonajeRepository;
 import com.alkemy.disneylandia.disneylandia.repository.specification.PeliculaSerieSpecification;
 import com.alkemy.disneylandia.disneylandia.service.PeliculaSerieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +22,17 @@ public class PeliculaSerieServiceImplement implements PeliculaSerieService {
     private PeliculaSerieRepository peliculaSerieRepository;
     private PeliculaSerieSpecification peliculaSerieSpecification;
     private PeliculaSerieMapper peliculaSerieMapper;
+    private PersonajeRepository personajeRepository;
 
     @Autowired
-    public PeliculaSerieServiceImplement(PeliculaSerieRepository peliculaSerieRepository, PeliculaSerieSpecification peliculaSerieSpecification, PeliculaSerieMapper peliculaSerieMapper) {
+    public PeliculaSerieServiceImplement(PeliculaSerieRepository peliculaSerieRepository,
+                                         PeliculaSerieSpecification peliculaSerieSpecification,
+                                         PeliculaSerieMapper peliculaSerieMapper,
+                                         PersonajeRepository personajeRepository) {
         this.peliculaSerieRepository = peliculaSerieRepository;
         this.peliculaSerieSpecification = peliculaSerieSpecification;
         this.peliculaSerieMapper = peliculaSerieMapper;
+        this.personajeRepository = personajeRepository;
     }
 
     public PeliculaSerieDto save(PeliculaSerieDto dto) {
@@ -58,8 +65,35 @@ public class PeliculaSerieServiceImplement implements PeliculaSerieService {
         return peliculaSerieDto;
     }
 
-//    @Override
-//    public void addPersonaje(Long id, Long idPersonaje) {
-//
-//    }
+    @Override
+    public PeliculaSerieDto addPersonaje(Long idPeliculaSerie, Long idPersonaje) {
+        PeliculaSerieEntity peliculaSerieEntity = peliculaSerieRepository.getReferenceById(idPeliculaSerie);
+        PersonajeEntity personajeEntity = personajeRepository.getReferenceById(idPersonaje);
+        peliculaSerieEntity.addPersonaje(personajeEntity);
+        PeliculaSerieEntity peliculaSerieSaved = peliculaSerieRepository.save(peliculaSerieEntity);
+        PeliculaSerieDto dto = peliculaSerieMapper.peliculaSerieEntity2Dto(peliculaSerieSaved, true);
+        return dto;
+    }
+
+    @Override
+    public PeliculaSerieDto removePersonaje(Long idPeliculaSerie, Long idPersonaje) {
+        PeliculaSerieEntity peliculaSerieEntity = peliculaSerieRepository.getReferenceById(idPeliculaSerie);
+        PersonajeEntity personajeEntity = personajeRepository.getReferenceById(idPersonaje);
+        peliculaSerieEntity.removePersonaje(personajeEntity);
+        PeliculaSerieEntity peliculaSerieSaved = peliculaSerieRepository.save(peliculaSerieEntity);
+        PeliculaSerieDto dto = peliculaSerieMapper.peliculaSerieEntity2Dto(peliculaSerieSaved, true);
+        return dto;
+    }
+
+    @Override
+    public PeliculaSerieDto update(Long id, PeliculaSerieDto peliculaSerie) {
+        if (!peliculaSerieRepository.existsById(id)) {
+            throw new ParamNotFound("Invalid id");
+        }
+        PeliculaSerieEntity entityOld = peliculaSerieRepository.getReferenceById(id);
+        PeliculaSerieEntity entity = peliculaSerieMapper.update(entityOld, peliculaSerie);
+        PeliculaSerieEntity entityUpdated = peliculaSerieRepository.save(entity);
+        PeliculaSerieDto result = peliculaSerieMapper.peliculaSerieEntity2Dto(entityUpdated, true);
+        return result;
+    }
 }

@@ -13,5 +13,9 @@ public interface PeliculaSerieService {
 
     PeliculaSerieDto getDetailsById(Long id);
 
-//    void addPersonaje(Long id, Long idPersonaje);
+    PeliculaSerieDto addPersonaje(Long idPeliculaSerie, Long idPersonaje);
+
+    PeliculaSerieDto removePersonaje(Long idPeliculaSerie, Long idPersonaje);
+
+    PeliculaSerieDto update(Long id, PeliculaSerieDto peliculaSerie);
 }

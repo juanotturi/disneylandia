@@ -37,15 +37,27 @@ public class PeliculaSerieController {
         return ResponseEntity.ok(peliculasSeries);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<PeliculaSerieDto> update(@PathVariable Long id, @RequestBody PeliculaSerieDto peliculaSerie) {
+        PeliculaSerieDto peliculaSerieUpdated = this.peliculaSerieService.update(id, peliculaSerie);
+        return ResponseEntity.ok().body(peliculaSerieUpdated);
+    }
+
     @PostMapping
     public ResponseEntity<PeliculaSerieDto> save(@RequestBody PeliculaSerieDto peliculaSerie) {
         PeliculaSerieDto peliculaSerieSaved = peliculaSerieService.save(peliculaSerie);
         return ResponseEntity.status(HttpStatus.CREATED).body(peliculaSerieSaved);
     }
 
-//    @PostMapping("/{id}/personajes/{id}")
-//    public ResponseEntity<Void> addPersonaje2PeliculaSerie(@PathVariable Long id, Long idPersonaje) {
-//        peliculaSerieService.addPersonaje(id, idPersonaje);
-//        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-//    }
+    @PostMapping("/{idPeliculaSerie}/personajes/{idPersonaje}")
+    public ResponseEntity<PeliculaSerieDto> addPersonaje(@PathVariable Long idPeliculaSerie, @PathVariable Long idPersonaje) {
+        peliculaSerieService.addPersonaje(idPeliculaSerie, idPersonaje);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    @DeleteMapping("{idPeliculaSerie}/personajes/{idPersonaje}")
+    public ResponseEntity<PeliculaSerieDto> removePersonaje(@PathVariable Long idPeliculaSerie, @PathVariable Long idPersonaje) {
+        peliculaSerieService.removePersonaje(idPeliculaSerie, idPersonaje);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 }

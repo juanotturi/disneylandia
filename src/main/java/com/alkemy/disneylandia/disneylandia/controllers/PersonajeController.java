@@ -40,6 +40,12 @@ public class PersonajeController {
         return ResponseEntity.ok(personajes);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<PersonajeDto> update(@PathVariable Long id, @RequestBody PersonajeDto personajeDto) {
+        PersonajeDto personajeUpdated = personajeService.update(id, personajeDto);
+        return ResponseEntity.ok().body(personajeUpdated);
+    }
+
     @PostMapping
     public ResponseEntity<PersonajeDto> save(@RequestBody PersonajeDto personaje) {
         PersonajeDto personajeSaved = personajeService.save(personaje);

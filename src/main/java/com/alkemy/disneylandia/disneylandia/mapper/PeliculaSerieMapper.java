@@ -69,4 +69,15 @@ public class PeliculaSerieMapper {
         }
         return dtos;
     }
+
+    public PeliculaSerieEntity update(PeliculaSerieEntity entity, PeliculaSerieDto dto) {
+        entity.setId(entity.getId());
+        entity.setTitulo(dto.getTitulo());
+        entity.setImagen(dto.getImagen());
+        entity.setFechaCreacion(dto.getFechaCreacion());
+        entity.setCalificacion((long) dto.getCalificacion());
+        entity.setGeneroId(dto.getGeneroId());
+        entity.getPersonajes();
+        return entity;
+    }
 }

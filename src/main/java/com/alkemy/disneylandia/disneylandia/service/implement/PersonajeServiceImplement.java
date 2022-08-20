@@ -71,4 +71,16 @@ public class PersonajeServiceImplement implements PersonajeService {
         List<PersonajeDto> dtos = personajeMapper.personajeEntitySet2DtoList(entities, true);
         return dtos;
     }
+
+    @Override
+    public PersonajeDto update(Long id, PersonajeDto personajeDto) {
+        if (!personajeRepository.existsById(id)) {
+            throw new ParamNotFound("Invalid id");
+        }
+        PersonajeEntity personajeOld = personajeRepository.getReferenceById(id);
+        PersonajeEntity entity = personajeMapper.update(personajeOld, personajeDto);
+        PersonajeEntity entityUpdated = personajeRepository.save(entity);
+        PersonajeDto result = personajeMapper.personajeEntity2Dto(entityUpdated, true);
+        return result;
+    }
 }

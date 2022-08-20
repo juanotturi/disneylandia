@@ -56,6 +56,14 @@ public class PeliculaSerieEntity {
         return other.id == this.id;
     }
 
+    public void addPersonaje(PersonajeEntity personaje) {
+        this.personajes.add(personaje);
+    }
+
+    public void removePersonaje(PersonajeEntity personaje) {
+        this.personajes.remove(personaje);
+    }
+
     @PrePersist
     void persist() {
         setFechaCreacion(LocalDate.now());
