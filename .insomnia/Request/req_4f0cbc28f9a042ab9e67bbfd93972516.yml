@@ -1,0 +1,51 @@
+_id: req_4f0cbc28f9a042ab9e67bbfd93972516
+type: Request
+parentId: fld_f9838640adf24c5dbc2f4459d30a4e4d
+modified: 1661121689003
+created: 1660329157494
+url: "{{ _.baseURL }}/peliculasseries/all"
+name: peliculasseries/all
+description: Devolver lista con todas las películas o series
+method: GET
+body:
+  mimeType: application/json
+  text: ""
+parameters:
+  - id: pair_6280d2f2f9d642afb67035733b420428
+    name: nombre
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_2534e1bb2e71449a91cf73c3772ea0a4
+    name: edad
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_c9c2f1f1103c43c698ee049bb3487c32
+    name: peso
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_32f56107aeaf4c75be1fae2ea9f3d6dd
+    name: peliculasSeries
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_ca188aafccec4a88a7b91d29ac839834
+    name: orden
+    value: ASC
+    description: ""
+    disabled: true
+headers:
+  - name: Authorization
+    value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFub3R0dXJpQGdtYWlsLmNvbSIsImV4cCI6MTY2MTE0NzczNiwiaWF0IjoxNjYxMTExNzM2fQ.yGJ9R5N7ncMoiqENJwgNHKD5nDKsjnSbIeqFl-oLkao
+    id: pair_eb59e995a155474ba9a32f29eb821584
+authentication: {}
+metaSortKey: -1660372197006.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

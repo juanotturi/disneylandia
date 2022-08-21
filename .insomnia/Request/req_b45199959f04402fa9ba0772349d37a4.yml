@@ -1,0 +1,42 @@
+_id: req_b45199959f04402fa9ba0772349d37a4
+type: Request
+parentId: fld_f9838640adf24c5dbc2f4459d30a4e4d
+modified: 1661121672556
+created: 1660329239132
+url: "{{ _.baseURL }}/peliculasseries"
+name: peliculasseries
+description: Creación de películas o series
+method: POST
+body:
+  mimeType: application/json
+  text: >-
+    {
+    	"titulo":"Monsters Inc.",
+    "imagen":"https://static.wikia.nocookie.net/disney/images/a/a8/Monstruos_sa.jpg/revision/latest?cb=20110804055254&path-prefix=es",
+    	"fechaCreacion":"2001-12-06",	
+    	"calificacion":10,
+    	"generoId":4
+    }
+parameters: []
+headers:
+  - name: Authorization
+    value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFub3R0dXJpQGdtYWlsLmNvbSIsImV4cCI6MTY2MDk5NTU0OCwiaWF0IjoxNjYwOTU5NTQ4fQ.z14sXV75IunmMCLdkhUQxR9oyuXnGajsFUgPaW1jn5I
+    id: pair_8c651529eff14a228f1138de8c8298e5
+  - id: pair_efa0b5f9918a4ba0915cb42edff7a4e0
+    name: Content-Type
+    value: application/json
+    description: ""
+authentication:
+  type: basic
+  useISO88591: false
+  disabled: true
+  username: juanotturi@gmail.com
+  password: juan1234
+metaSortKey: -1660372197019
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

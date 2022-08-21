@@ -1,0 +1,43 @@
+_id: req_394c02f29ae8455782239eadcce17f37
+type: Request
+parentId: fld_f9838640adf24c5dbc2f4459d30a4e4d
+modified: 1661121748362
+created: 1660681994157
+url: "{{ _.baseURL }}/peliculasseries"
+name: peliculasseries/filters
+description: Buscar películas o series filtrando por nombreo género. Se pueden
+  ordenar por fecha de estreno
+method: GET
+body:
+  mimeType: application/json
+  text: ""
+parameters:
+  - id: pair_bece17f4ee3a4c7fb421a583daa3bb7a
+    name: titulo
+    value: Toy Story
+    description: ""
+    disabled: true
+  - id: pair_5890fe71a13d467f8d1257e45e19d017
+    name: generoId
+    value: "4"
+    description: ""
+    disabled: false
+  - id: pair_7a7a3e3da6ee4504a4b7c930fc001700
+    name: orden
+    value: asc
+    description: ""
+    disabled: true
+headers:
+  - name: Authorization
+    value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFub3R0dXJpQGdtYWlsLmNvbSIsImV4cCI6MTY2MTE0NzczNiwiaWF0IjoxNjYxMTExNzM2fQ.yGJ9R5N7ncMoiqENJwgNHKD5nDKsjnSbIeqFl-oLkao
+    id: pair_c782b5eb71264f5a94c00e2943a4ece2
+    disabled: false
+authentication: {}
+metaSortKey: -1660372196981.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

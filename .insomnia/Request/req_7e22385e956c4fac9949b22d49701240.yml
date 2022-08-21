@@ -1,0 +1,38 @@
+_id: req_7e22385e956c4fac9949b22d49701240
+type: Request
+parentId: fld_f9838640adf24c5dbc2f4459d30a4e4d
+modified: 1661121795587
+created: 1660961629506
+url: "{{ _.baseURL }}/peliculasseries/7"
+name: peliculasseries/id
+description: Editar una película o serie ingresando su ID
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    		"titulo": "Lilo y Stitch",
+    		"imagen": "https://m.media-amazon.com/images/I/51SCoKwD2vL._AC_.jpg",
+    		"fechaCreacion": "2002-07-06",
+    		"calificacion": 8,
+    		"generoId": 4,
+    		"personajes": null
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_eb7ae9923dad4169becadb677ed2c4de
+  - id: pair_8c8f2195be9e43f9b94f9ec846606d32
+    name: Authorization
+    value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFub3R0dXJpQGdtYWlsLmNvbSIsImV4cCI6MTY2MDk5NTU0OCwiaWF0IjoxNjYwOTU5NTQ4fQ.z14sXV75IunmMCLdkhUQxR9oyuXnGajsFUgPaW1jn5I
+    description: ""
+authentication: {}
+metaSortKey: -1660372196977.5938
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

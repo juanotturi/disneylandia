@@ -1,0 +1,29 @@
+_id: req_293676af12ed4a7fbff360ae5106f52c
+type: Request
+parentId: fld_f9838640adf24c5dbc2f4459d30a4e4d
+modified: 1661121771495
+created: 1660959066903
+url: "{{ _.baseURL }}/peliculasseries/8/personajes/2"
+name: peliculasseries/id/personajes/id
+description: Eliminar personaje de una película o serie
+method: DELETE
+body: {}
+parameters: []
+headers:
+  - id: pair_af93426ecbaf485183cd710f53be733b
+    name: Content-Type
+    value: application/json
+    description: ""
+  - id: pair_c726397cd33d40a48f6a7686a7a3acd3
+    name: Authorization
+    value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFub3R0dXJpQGdtYWlsLmNvbSIsImV4cCI6MTY2MDk5NTU0OCwiaWF0IjoxNjYwOTU5NTQ4fQ.z14sXV75IunmMCLdkhUQxR9oyuXnGajsFUgPaW1jn5I
+    description: ""
+authentication: {}
+metaSortKey: -1660372196976.8125
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

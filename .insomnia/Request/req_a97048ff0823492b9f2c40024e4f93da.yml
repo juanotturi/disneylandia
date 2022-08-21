@@ -1,0 +1,30 @@
+_id: req_a97048ff0823492b9f2c40024e4f93da
+type: Request
+parentId: fld_de28d280f77f4f7cb30e55b7ce7de83d
+modified: 1661121533987
+created: 1660745984678
+url: "{{ _.baseURL }}/personajes/10"
+name: personajes/id
+description: Buscar y devolver un personaje según ID
+method: GET
+body: {}
+parameters:
+  - id: pair_e10d8d61ccdd4a808c85a56b6f189594
+    name: ""
+    value: ""
+    description: ""
+    disabled: true
+headers:
+  - id: pair_d7eb811657e742c09362809711ecde87
+    name: Authorization
+    value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFub3R0dXJpQGdtYWlsLmNvbSIsImV4cCI6MTY2MTE0NzczNiwiaWF0IjoxNjYxMTExNzM2fQ.yGJ9R5N7ncMoiqENJwgNHKD5nDKsjnSbIeqFl-oLkao
+    description: ""
+authentication: {}
+metaSortKey: -1660372197069
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,52 @@
+_id: req_1e707652e9c3429eb5be8c3d6ef90cbd
+type: Request
+parentId: fld_de28d280f77f4f7cb30e55b7ce7de83d
+modified: 1661121585741
+created: 1660519571879
+url: "{{ _.baseURL }}/personajes"
+name: personajes/filters
+description: Buscar personajes filtrando por nombre, edad, peso o películas en
+  las que aparece. Se pueden ordenar alfabéticamente
+method: GET
+body:
+  mimeType: application/json
+  text: ""
+parameters:
+  - id: pair_03d6eb3fd84545b2a9c3d0450733e82d
+    name: nombre
+    value: Moana
+    description: ""
+    disabled: true
+  - id: pair_b3e1fa9a0ef74690ae2e3cefd791fae0
+    name: edad
+    value: "25"
+    description: ""
+    disabled: true
+  - id: pair_4ccccc40dcd84ccbb6d0b632d4ea7f50
+    name: peso
+    value: "200"
+    description: ""
+    disabled: true
+  - id: pair_0cd7cb0776b34b8c97b485f58be7ca2a
+    name: peliculasSeries
+    value: "5"
+    description: ""
+    disabled: true
+  - id: pair_f41164a65b8a4d56b73d3374438c090d
+    name: orden
+    value: asc
+    description: ""
+    disabled: true
+headers:
+  - name: Authorization
+    value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFub3R0dXJpQGdtYWlsLmNvbSIsImV4cCI6MTY2MTE0NzczNiwiaWF0IjoxNjYxMTExNzM2fQ.yGJ9R5N7ncMoiqENJwgNHKD5nDKsjnSbIeqFl-oLkao
+    id: pair_fc9943217a2f43e1a60227cadb1fd12a
+authentication: {}
+metaSortKey: -1660372197056.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

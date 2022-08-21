@@ -1,0 +1,30 @@
+_id: req_fe4b65bbacb84273ac98e6afdc27014d
+type: Request
+parentId: fld_d970b710e28e47f484cfb7d7d6f9b765
+modified: 1661121485407
+created: 1660922980415
+url: "{{ _.baseURL }}/auth/signup"
+name: signup
+description: Creación de sesión
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"username":"juanotturi@gmail.com",
+    	"password":"juan1234"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_7bcb2568cb80405faa29dfdb7cfdaf30
+authentication: {}
+metaSortKey: -1660922980415
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

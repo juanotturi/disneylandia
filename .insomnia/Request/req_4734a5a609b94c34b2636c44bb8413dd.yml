@@ -1,0 +1,25 @@
+_id: req_4734a5a609b94c34b2636c44bb8413dd
+type: Request
+parentId: fld_98bf3f6a3b87403d8e368d301a1fdce3
+modified: 1661121831804
+created: 1660256352307
+url: "{{ _.baseURL }}/generos"
+name: generos
+description: Devolver lista con todos los géneros
+method: GET
+body: {}
+parameters: []
+headers:
+  - id: pair_0358c4ceb4084577a04a2071031469d4
+    name: Authorization
+    value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFub3R0dXJpQGdtYWlsLmNvbSIsImV4cCI6MTY2MTE0NzczNiwiaWF0IjoxNjYxMTExNzM2fQ.yGJ9R5N7ncMoiqENJwgNHKD5nDKsjnSbIeqFl-oLkao
+    description: ""
+authentication: {}
+metaSortKey: -1660372196950.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

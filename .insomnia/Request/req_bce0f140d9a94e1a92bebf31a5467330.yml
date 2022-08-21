@@ -1,0 +1,33 @@
+_id: req_bce0f140d9a94e1a92bebf31a5467330
+type: Request
+parentId: fld_98bf3f6a3b87403d8e368d301a1fdce3
+modified: 1661121817483
+created: 1660256590072
+url: "{{ _.baseURL }}/generos"
+name: generos
+description: Creación de géneros
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"nombre":"Bélica"
+    }
+parameters: []
+headers:
+  - name: Authorization
+    value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFub3R0dXJpQGdtYWlsLmNvbSIsImV4cCI6MTY2MDk1OTQ3NSwiaWF0IjoxNjYwOTIzNDc1fQ.tL9gKU8Nrb_OQm6x0jlrSKJK-gXQOOEsT0yOVp_Rduc
+    id: pair_0448f7993cd34d13a87f0606a45b51cc
+  - id: pair_78836871ac5649ae913a4d94fb53c469
+    name: Content-Type
+    value: application/json
+    description: ""
+authentication: {}
+metaSortKey: -1660372197000.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

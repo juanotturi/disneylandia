@@ -1,0 +1,30 @@
+_id: req_6306ded5f6c54942b95a4b280ceaefa3
+type: Request
+parentId: fld_de28d280f77f4f7cb30e55b7ce7de83d
+modified: 1661121500751
+created: 1660330020156
+url: "{{ _.baseURL }}/personajes/all"
+name: personajes/all
+description: Devolver lista con todos los personajes
+method: GET
+body: {}
+parameters: []
+headers:
+  - id: pair_9a081f36f63840df97adfde825dbebf9
+    name: Authorization
+    value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFub3R0dXJpQGdtYWlsLmNvbSIsImV4cCI6MTY2MTE0NzczNiwiaWF0IjoxNjYxMTExNzM2fQ.yGJ9R5N7ncMoiqENJwgNHKD5nDKsjnSbIeqFl-oLkao
+    description: ""
+  - id: pair_d6a3db915f9943139773ca6e5ec72c6f
+    name: ""
+    value: ""
+    description: ""
+    disabled: true
+authentication: {}
+metaSortKey: -1660372197094
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

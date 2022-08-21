@@ -1,0 +1,38 @@
+_id: req_f4ef96c1be884e2eaf22eeb34b4c0f5a
+type: Request
+parentId: fld_de28d280f77f4f7cb30e55b7ce7de83d
+modified: 1661121794062
+created: 1660962660189
+url: "{{ _.baseURL }}/personajes/"
+name: personajes/id
+description: Editar un personaje ingresando su ID
+method: PUT
+body:
+  mimeType: application/json
+  text: >-
+    {		
+    	"nombre": "James P. Sullivan",
+    		"imagen": "https://static.wikia.nocookie.net/disney/images/e/ef/Sulley.png/revision/latest?cb=20130302192551&path-prefix=es",
+    		"edad": 35,
+    		"peso": 250,
+    		"historia": "Mounstruo azul peludo",
+    		"peliculasSeries": null
+    }
+parameters: []
+headers:
+  - id: pair_054b13e63ff74a70bcaf6347b7a78b4a
+    name: Authorization
+    value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFub3R0dXJpQGdtYWlsLmNvbSIsImV4cCI6MTY2MDk5NTU0OCwiaWF0IjoxNjYwOTU5NTQ4fQ.z14sXV75IunmMCLdkhUQxR9oyuXnGajsFUgPaW1jn5I
+    description: ""
+  - name: Content-Type
+    value: application/json
+    id: pair_3a885da662f34bfcb06c6b7ddcb8354f
+authentication: {}
+metaSortKey: -1660372197053.375
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,25 @@
+_id: req_f3bbf354bca0441994dec7777409897e
+type: Request
+parentId: fld_f9838640adf24c5dbc2f4459d30a4e4d
+modified: 1661121707030
+created: 1660758572623
+url: "{{ _.baseURL }}/peliculasseries/5"
+name: peliculasseries/id
+description: Buscar y devolver una película o serie según ID
+method: GET
+body: {}
+parameters: []
+headers:
+  - id: pair_d6f6d2b8111645ea8da109117f913afd
+    name: Authorization
+    value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFub3R0dXJpQGdtYWlsLmNvbSIsImV4cCI6MTY2MTE0NzczNiwiaWF0IjoxNjYxMTExNzM2fQ.yGJ9R5N7ncMoiqENJwgNHKD5nDKsjnSbIeqFl-oLkao
+    description: ""
+authentication: {}
+metaSortKey: -1660372196994
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

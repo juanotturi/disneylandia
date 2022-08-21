@@ -1,0 +1,29 @@
+_id: req_72d1f5025beb4a688dac8573727300c5
+type: Request
+parentId: fld_f9838640adf24c5dbc2f4459d30a4e4d
+modified: 1661121761080
+created: 1660959000990
+url: "{{ _.baseURL }}/peliculasseries/8/personajes/11"
+name: peliculasseries/id/personajes/id
+description: Agrerar un personaje a una película o serie
+method: POST
+body: {}
+parameters: []
+headers:
+  - id: pair_98c113bf2f8546be9178bd427ae59ed6
+    name: Content-Type
+    value: application/json
+    description: ""
+  - id: pair_2a5cc96584e84c7fbd653a8e56f3eaf9
+    name: Authorization
+    value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFub3R0dXJpQGdtYWlsLmNvbSIsImV4cCI6MTY2MDk5NTU0OCwiaWF0IjoxNjYwOTU5NTQ4fQ.z14sXV75IunmMCLdkhUQxR9oyuXnGajsFUgPaW1jn5I
+    description: ""
+authentication: {}
+metaSortKey: -1660372196978.375
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

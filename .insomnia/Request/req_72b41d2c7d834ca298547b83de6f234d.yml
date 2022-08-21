@@ -1,0 +1,30 @@
+_id: req_72b41d2c7d834ca298547b83de6f234d
+type: Request
+parentId: fld_d970b710e28e47f484cfb7d7d6f9b765
+modified: 1661122658282
+created: 1660923034382
+url: "{{ _.baseURL }}/auth/signin"
+name: signin
+description: Ingresar sesión. Devolverá un token
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"username":"juanotturi@gmail.com",
+    	"password":"juan1234"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_4f52c92bbeac423a9ae793a2fd2cfd01
+authentication: {}
+metaSortKey: -1660923034383
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

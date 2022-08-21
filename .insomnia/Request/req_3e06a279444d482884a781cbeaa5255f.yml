@@ -1,0 +1,33 @@
+_id: req_3e06a279444d482884a781cbeaa5255f
+type: Request
+parentId: fld_de28d280f77f4f7cb30e55b7ce7de83d
+modified: 1661122558611
+created: 1660330065858
+url: "{{ _.baseURL }}/personajes"
+name: personajes
+description: Creación de personajes
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"nombre": "Stitch"
+    }
+parameters: []
+headers:
+  - name: Authorization
+    value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFub3R0dXJpQGdtYWlsLmNvbSIsImV4cCI6MTY2MDk5NTU0OCwiaWF0IjoxNjYwOTU5NTQ4fQ.z14sXV75IunmMCLdkhUQxR9oyuXnGajsFUgPaW1jn5I
+    id: pair_e02ef6c5acf542ab88a3bf50dcaf9f46
+  - id: pair_8ecb30c8df164fea84f055642b0fedc6
+    name: Content-Type
+    value: application/json
+    description: ""
+authentication: {}
+metaSortKey: -1660372197144
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

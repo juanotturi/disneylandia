@@ -1,0 +1,31 @@
+_id: req_bbc7dd96a0f54629b11279feafcb70c6
+type: Request
+parentId: fld_de28d280f77f4f7cb30e55b7ce7de83d
+modified: 1661121650706
+created: 1660424706880
+url: "{{ _.baseURL }}/personajes/11"
+name: personajes/id
+description: Eliminar un personaje ingresando su ID
+method: DELETE
+body:
+  mimeType: application/json
+  text: ""
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_8cd58290fac04ac3a28d84eb7754d916
+    disabled: false
+  - id: pair_b6c32326fc0643ba9ca3755fc8aeca22
+    name: Authorization
+    value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWFub3R0dXJpQGdtYWlsLmNvbSIsImV4cCI6MTY2MTE0NzczNiwiaWF0IjoxNjYxMTExNzM2fQ.yGJ9R5N7ncMoiqENJwgNHKD5nDKsjnSbIeqFl-oLkao
+    description: ""
+authentication: {}
+metaSortKey: -1660372197050.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
