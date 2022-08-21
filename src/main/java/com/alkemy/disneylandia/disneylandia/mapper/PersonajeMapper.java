@@ -59,7 +59,6 @@ public class PersonajeMapper {
         PersonajeBasicDto basicDto;
         for (PersonajeEntity entity : entities) {
             basicDto = new PersonajeBasicDto();
-            basicDto.setId(entity.getId());
             basicDto.setNombre(entity.getNombre());
             basicDto.setImagen(entity.getImagen());
             dtos.add(basicDto);

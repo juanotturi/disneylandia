@@ -7,7 +7,6 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class PeliculaSerieBasicDto {
-    private Long id;
     private String titulo;
     private String imagen;
     private LocalDate fechaCreacion;

@@ -65,10 +65,10 @@ public class PersonajeServiceImplement implements PersonajeService {
         personajeRepository.deleteById(id);
     }
 
-    public List<PersonajeDto> getByFilters(String nombre, Long edad, Long peso, Set<Long> peliculasSeries, String orden) {
+    public List<PersonajeBasicDto> getByFilters(String nombre, Long edad, Long peso, Set<Long> peliculasSeries, String orden) {
         PersonajeFiltersDto filtersDto = new PersonajeFiltersDto(nombre, edad, peso, peliculasSeries, orden);
         List<PersonajeEntity> entities = personajeRepository.findAll(personajeSpecification.getByFilters(filtersDto));
-        List<PersonajeDto> dtos = personajeMapper.personajeEntitySet2DtoList(entities, true);
+        List<PersonajeBasicDto> dtos = personajeMapper.personajeEntitySet2BasicDtoList(entities);
         return dtos;
     }
 

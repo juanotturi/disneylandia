@@ -1,5 +1,6 @@
 package com.alkemy.disneylandia.disneylandia.controllers;
 
+import com.alkemy.disneylandia.disneylandia.dto.PersonajeBasicDto;
 import com.alkemy.disneylandia.disneylandia.dto.PersonajeDto;
 import com.alkemy.disneylandia.disneylandia.service.PersonajeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,13 +31,13 @@ public class PersonajeController {
     }
 
     @GetMapping
-    public ResponseEntity<List<PersonajeDto>> getDetailsByFilters(
+    public ResponseEntity<List<PersonajeBasicDto>> getDetailsByFilters(
             @RequestParam(required = false) String nombre,
             @RequestParam(required = false) Long edad,
             @RequestParam(required = false) Long peso,
             @RequestParam(required = false) Set<Long> peliculasSeries,
             @RequestParam(required = false, defaultValue = "ASC") String orden) {
-        List<PersonajeDto> personajes = personajeService.getByFilters(nombre, edad, peso, peliculasSeries, orden);
+        List<PersonajeBasicDto> personajes = personajeService.getByFilters(nombre, edad, peso, peliculasSeries, orden);
         return ResponseEntity.ok(personajes);
     }
 

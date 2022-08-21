@@ -3,6 +3,7 @@ package com.alkemy.disneylandia.disneylandia.authorization.service;
 import com.alkemy.disneylandia.disneylandia.authorization.dto.UserDto;
 import com.alkemy.disneylandia.disneylandia.authorization.entity.UserEntity;
 import com.alkemy.disneylandia.disneylandia.authorization.repository.UserRepository;
+import com.alkemy.disneylandia.disneylandia.service.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,8 +20,8 @@ public class UserDetailsCustomService implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
-//    @Autowired
-//    EmailService emailService;
+    @Autowired
+    EmailService emailService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -36,9 +37,9 @@ public class UserDetailsCustomService implements UserDetailsService {
         userEntity.setUsername(userDto.getUsername());
         userEntity.setPassword(userDto.getPassword());
         userEntity = userRepository.save(userEntity);
-//        if (userEntity != null) {
-//            emailService.sendWelcomeEmailTo(userEntity.getUsername());
-//        }
+        if (userEntity != null) {
+            emailService.sendWelcomeEmailTo(userEntity.getUsername());
+        }
         return userEntity != null;
     }
 }

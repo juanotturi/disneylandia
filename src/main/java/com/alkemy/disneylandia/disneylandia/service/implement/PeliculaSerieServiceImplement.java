@@ -1,5 +1,6 @@
 package com.alkemy.disneylandia.disneylandia.service.implement;
 
+import com.alkemy.disneylandia.disneylandia.dto.PeliculaSerieBasicDto;
 import com.alkemy.disneylandia.disneylandia.dto.PeliculaSerieDto;
 import com.alkemy.disneylandia.disneylandia.dto.PeliculaSerieFiltersDto;
 import com.alkemy.disneylandia.disneylandia.entity.PeliculaSerieEntity;
@@ -49,10 +50,10 @@ public class PeliculaSerieServiceImplement implements PeliculaSerieService {
     }
 
     @Override
-    public List<PeliculaSerieDto> getByFilters(String titulo, Long generoId, String orden) {
+    public List<PeliculaSerieBasicDto> getByFilters(String titulo, Long generoId, String orden) {
         PeliculaSerieFiltersDto filtersDto = new PeliculaSerieFiltersDto(titulo, generoId, orden);
         List<PeliculaSerieEntity> entities = peliculaSerieRepository.findAll(peliculaSerieSpecification.getByFilters(filtersDto));
-        List<PeliculaSerieDto> dtos = peliculaSerieMapper.peliculaSerieEntityList2DtoList(entities, true);
+        List<PeliculaSerieBasicDto> dtos = peliculaSerieMapper.peliculaSerieEntitySet2BasicDtoList(entities);
         return dtos;
     }
 
@@ -96,4 +97,8 @@ public class PeliculaSerieServiceImplement implements PeliculaSerieService {
         PeliculaSerieDto result = peliculaSerieMapper.peliculaSerieEntity2Dto(entityUpdated, true);
         return result;
     }
+
+//    public void delete(Long id) {
+//        peliculaSerieRepository.deleteById(id);
+//    }
 }

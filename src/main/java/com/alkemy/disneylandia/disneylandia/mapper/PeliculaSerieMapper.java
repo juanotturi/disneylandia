@@ -62,10 +62,10 @@ public class PeliculaSerieMapper {
         PeliculaSerieBasicDto basicDto;
         for (PeliculaSerieEntity entity : entities) {
             basicDto = new PeliculaSerieBasicDto();
-            basicDto.setId(entity.getId());
             basicDto.setTitulo(entity.getTitulo());
             basicDto.setImagen(entity.getImagen());
             basicDto.setFechaCreacion(entity.getFechaCreacion());
+            dtos.add(basicDto);
         }
         return dtos;
     }

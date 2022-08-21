@@ -1,5 +1,6 @@
 package com.alkemy.disneylandia.disneylandia.controllers;
 
+import com.alkemy.disneylandia.disneylandia.dto.PeliculaSerieBasicDto;
 import com.alkemy.disneylandia.disneylandia.dto.PeliculaSerieDto;
 import com.alkemy.disneylandia.disneylandia.service.PeliculaSerieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +30,11 @@ public class PeliculaSerieController {
     }
 
     @GetMapping
-    public ResponseEntity<List<PeliculaSerieDto>> getDetailsByFilters(
+    public ResponseEntity<List<PeliculaSerieBasicDto>> getDetailsByFilters(
             @RequestParam(required = false) String titulo,
             @RequestParam(required = false) Long generoId,
             @RequestParam(required = false, defaultValue = "ASC") String orden) {
-        List<PeliculaSerieDto> peliculasSeries = peliculaSerieService.getByFilters(titulo, generoId, orden);
+        List<PeliculaSerieBasicDto> peliculasSeries = peliculaSerieService.getByFilters(titulo, generoId, orden);
         return ResponseEntity.ok(peliculasSeries);
     }
 
@@ -60,4 +61,10 @@ public class PeliculaSerieController {
         peliculaSerieService.removePersonaje(idPeliculaSerie, idPersonaje);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Void> delete(@PathVariable Long id) {
+//        peliculaSerieService.delete(id);
+//        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+//    }
 }
